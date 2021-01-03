@@ -1,0 +1,1 @@
+'tidyverse', 'plyr', 'gridExtra', 'deSolve', 'readxl', 'rio', 'growthrates', 'matrixcalc', 'spatstat', 'igraph', 'ggplotify', 'wordspace', 'ggforce', 'metR', 'OceanView'
