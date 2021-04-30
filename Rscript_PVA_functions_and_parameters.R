@@ -32,55 +32,6 @@ Exp_Model = function(N0, r, sigma, year0, years, random_seed){
   return(tibble(year = year0 + 0:years, N = N_record))
 }
 
-
-parms = 
-  tibble(
-    parameter = c('r', 'K', 'theta', 'sigma'),
-    estimate = c(0.97966, 41.47997, 1.23253, 0.63178),
-    std_error = c(0.57141, 6.05662, 0.86754, 0.09459)
-  )
-
-r = 
-  parms %>% 
-  filter(parameter == 'r') %$% 
-  estimate
-
-K =
-  parms %>% 
-  filter(parameter == 'K') %$% 
-  estimate 
-
-theta =
-  parms %>% 
-  filter(parameter == 'theta') %$% 
-  estimate 
-
-sigma =
-  parms %>% 
-  filter(parameter == 'sigma') %$% 
-  estimate 
-
-se_r =
-  parms %>% 
-  filter(parameter == 'r') %$% 
-  std_error 
-
-se_K =
-  parms %>% 
-  filter(parameter == 'K') %$% 
-  std_error 
-
-se_theta =
-  parms %>% 
-  filter(parameter == 'theta') %$% 
-  std_error 
-
-se_sigma =
-  parms %>% 
-  filter(parameter == 'sigma') %$% 
-  std_error 
-
-
 # Process PVA results for quasiextinction statistics
 quasiextinction_analysis = function(simulation_results, parameters){
   
