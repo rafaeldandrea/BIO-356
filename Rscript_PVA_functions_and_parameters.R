@@ -37,7 +37,7 @@ quasiextinction_analysis = function(simulation_results, parameters){
   
   invisible(list2env(parameters, envir = environment()))
   
-  if(model == 'Theta_Logistic'){
+  if(growth_model == 'Theta_Logistic'){
     result = 
       simulation_results %>%
       filter(N <= quasiextinction_threshold) %>%
@@ -49,7 +49,7 @@ quasiextinction_analysis = function(simulation_results, parameters){
       ungroup
   }
   
-  if(model == 'Exp_Model'){
+  if(growth_model == 'Exp_Model'){
     result = 
       simulation_results %>%
       filter(N <= quasiextinction_threshold) %>%
@@ -70,7 +70,7 @@ simulate_PVA = function(parameters){
   
   invisible(list2env(parameters, envir = environment()))
   
-  if(model == 'Theta_Logistic'){
+  if(growth_model == 'Theta_Logistic'){
     result =
       expand_grid(
         N0 = N0, 
@@ -85,7 +85,7 @@ simulate_PVA = function(parameters){
       unnest(cols = c(model))
   }
   
-  if(model == 'Exp_Model'){
+  if(growth_model == 'Exp_Model'){
     result =
       expand_grid(
         N0 = N0, 
